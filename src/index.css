@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply flex items-center justify-center gap-2 px-4 py-2 font-semibold rounded-lg shadow-md;
+  }
+
+  .btn.btn-light {
+    @apply text-gray-500 bg-white dark:bg-gray-200 dark:text-slate-800;
+  }
+
+  .btn.btn-danger {
+    @apply text-white bg-red-600 shadow-red-400/40;
+  }
+}
+
+:root {
+  --lines: 3;
+  --line-height: 20px;
+}
+
+.correct {
+  color: #0f172a;
+}
+
+.extra {
+  color: #ca8b04a7;
+}
+
+.incorrect {
+  color: #ec3939;
+}
+
+/* Dark mode */
+
+.dark .correct {
+  color: white;
+  /* Lighter color for dark mode */
+}
+
+.dark .extra {
+  color: #9d6b1a;
+  /* Adjusted color for better contrast in dark mode */
+}
+
+.dark .incorrect {
+  color: #fb5858;
+  /* Adjusted color for better contrast in dark mode */
+}
+
+.incorrect-word {
+  border-bottom: 2px solid rgba(231, 89, 89, 0.836);
+}
+
+.custom-height {
+  min-height: calc(100vh - 75px);
+}
+
+.hover\:wpm-tooltip:hover::before {
+  content: 'wpm';
+  position: absolute;
+  user-select: none;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  color: #a21caf;
+  font-size: 1.25rem;
+  /* Adjust this value as needed */
+  font-weight: 500;
+  /* Tailwind's font-semibold */
+}
+
+.dark .hover\:wpm-tooltip:hover::before {
+  color: #6ee7b7;
+}
+
+.hover\:acc-tooltip:hover::before {
+  content: 'accuracy';
+  position: absolute;
+  user-select: none;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  color: #a21caf;
+  font-size: 1rem;
+  /* Adjust this value as needed */
+  font-weight: 500;
+  /* Tailwind's font-semibold */
+}
+
+.dark .hover\:acc-tooltip:hover::before {
+  color: #6ee7b7;
+}
