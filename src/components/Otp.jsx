@@ -17,7 +17,7 @@ export default function () {
             otpInput.current.focus();
         }, 0);
 
-        if (userMail === null) {
+        if (!userMail) {
             // toast.error('UaserMail not found');
             navigate('/signup');
         }

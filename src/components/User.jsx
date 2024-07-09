@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { FaUserAstronaut } from "react-icons/fa";
 import DeleteModal from './DeleteModal';
+import { LoadingAnimation } from './LoadingAnimation';
 
-const ProfilePage = ({ userData, onDelete }) => {
+const ProfilePage = ({ userData }) => {
     return (
         <div className='w-full bg-gray-100 dark:bg-slate-800 '>
             <div className="max-w-screen-xl mx-auto bg-gray-100 custom-height dark:bg-slate-800 ">
@@ -82,7 +83,7 @@ export default function User() {
     const handleDeleteUser = async () => { return; }
 
     if (!userData) {
-        return <div>Loading...</div>;
+        return <LoadingAnimation />;
     }
 
     return <ProfilePage userData={userData} onDelete={handleDeleteUser} />;

@@ -6,12 +6,13 @@ const initialState = {
     isUserLoggedIn: false,
     textData: [],
     testSettings: {
-        testName: "10",
-        testType: "word",
+        testName: localStorage.getItem('testName') || '10',
+        testType: localStorage.getItem('testType') || 'word',
         isPunc: false,
         isNum: false,
     },
     userEmail: '',
+    loading: false,
 }
 
 export const gameSlice = createSlice({
@@ -33,10 +34,13 @@ export const gameSlice = createSlice({
         },
         updateUserEmail: (state, action) => {
             state.userEmail = action.payload;
+        },
+        setLoading: (state, action) => {
+            state.loading = action.payload;
         }
     }
 
 })
 
-export const { updateGameState, updateTextData, updateTestSettings, setUserLogin, updateUserEmail } = gameSlice.actions;
+export const { updateGameState, updateTextData, updateTestSettings, setUserLogin, updateUserEmail, setLoading } = gameSlice.actions;
 export default gameSlice.reducer; 

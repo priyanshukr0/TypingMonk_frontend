@@ -18,6 +18,19 @@
   .btn.btn-danger {
     @apply text-white bg-red-600 shadow-red-400/40;
   }
+
+  .restart-test-btn-blue {
+    @apply mt-3 text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800
+  }
+
+  .nav-primary-btn {
+    @apply flex flex-row items-center px-5 py-3 text-base font-medium text-white transition duration-200 bg-orange-500 rounded-xl hover:bg-orange-600 active:bg-orange-700 dark:bg-orange-400 dark:hover:bg-orange-500 dark:active:bg-orange-600
+  }
+
+  .nav-secondary-btn {
+    @apply px-5 py-3 text-base font-medium transition duration-200 bg-gray-100 rounded-xl hover:bg-gray-200 active:bg-gray-300 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/30
+  }
+
 }
 
 :root {
@@ -96,4 +109,33 @@
 
 .dark .hover\:acc-tooltip:hover::before {
   color: #6ee7b7;
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: space-between;
+  width: 125px;
+}
+
+.loading-dots div {
+  width: 25px;
+  height: 25px;
+  background-color: #0874d2;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loading-dots div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(-25px);
+    opacity: 0.5;
+  }
 }

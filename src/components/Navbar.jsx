@@ -84,13 +84,13 @@ export default function Navbar() {
         <div className="hidden md:block">
           <ul className="flex items-center gap-4">
             <Link to={userLoggedIn ? '/user' : '/login'}>
-              <button className="px-5 py-3 text-base font-medium transition duration-200 bg-gray-100 rounded-xl text-navy-700 hover:bg-gray-200 active:bg-gray-300 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/30">
+              <button className="nav-secondary-btn">
                 {userLoggedIn ? 'Profile' : 'Login'}
               </button>
             </Link>
             <Link to={userLoggedIn ? '' : '/signup'}>
               <button
-                className="flex flex-row items-center px-5 py-3 text-base font-medium text-white transition duration-200 bg-orange-500 rounded-xl hover:bg-orange-600 active:bg-orange-700 dark:bg-orange-400 dark:hover:bg-orange-500 dark:active:bg-orange-600"
+                className="nav-primary-btn"
                 onClick={userLoggedIn ? logout : null}
               >
                 {userLoggedIn ? (
@@ -117,13 +117,13 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col items-center gap-8 ">
               <Link onClick={closeNavMenu} to={userLoggedIn ? '/user' : '/login'}>
-                <button className="px-5 py-3 text-base font-medium transition duration-200 bg-gray-100 rounded-xl text-navy-700 hover:bg-gray-200 active:bg-gray-300 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/30">
+                <button className="nav-secondary-btn">
                   {userLoggedIn ? 'Profile' : 'Login'}
                 </button>
               </Link>
               <Link onClick={closeNavMenu} to={userLoggedIn ? '' : '/signup'}>
                 <button
-                  className="flex flex-row items-center px-5 py-3 text-base font-medium text-white transition duration-200 bg-orange-500 rounded-xl hover:bg-orange-600 active:bg-orange-700 dark:bg-orange-400 dark:hover:bg-orange-500 dark:active:bg-orange-600"
+                  className="nav-primary-btn"
                   onClick={userLoggedIn ? logout : null}
                 >
                   {userLoggedIn ? (
@@ -137,14 +137,9 @@ export default function Navbar() {
               </Link>
               <div onClick={closeNavMenu}>
                 <NavigationItem title="Leaderboard" path="/leaderboard" />
-
               </div>
               <div >
-                <DarkModeToggle
-                  onChange={handleDark}
-                  checked={isDarkMode}
-                  size={60}
-                />
+                <DarkModeToggle onChange={handleDark} checked={isDarkMode} size={60} />
               </div>
 
             </div>
