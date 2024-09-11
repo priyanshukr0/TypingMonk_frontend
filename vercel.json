@@ -1,3 +1,8 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ],
+  "redirects": [
+    { "source": "https://www.typingmonk.vercel.app/(.*)", "destination": "https://typingmonk.vercel.app/$1", "permanent": true }
+  ]
 }
